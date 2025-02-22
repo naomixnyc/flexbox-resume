@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Flex Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <!-- @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"); -->
+
+    <!-- This version, the inner container is not centering in the outermost container... -->
+    <!-- right columns breaking after adding padding left -->
+
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 20px; /* margin around the whole resume */
+      }
+
+      .resume-container {
+        border: 5px solid black; /* visible border */
+        padding: 30px; /* space inside the border */
+        margin: 20px auto; /* space outside the border */
+        /* max-width: 900px;  */
+        background: white; 
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        width: 100%;
+        /* height: 5em; */
+        /* background: #ccc; */
+      }
+
+      .wrapper > div {
+        flex: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        /* border: 1px solid color(srgb red green blue); */
+        /* border: 0.1px solid; */
+        flex-basis: 100%;
+        align-items: center;
+      }
+
+      .wrapper > .left {
+        /* background: #fcc; */
+        flex-wrap: wrap;
+        flex-basis: 60%;
+        /* display: flex; aliigns center vertically - fix!!!! */
+      }
+      .wrapper > div > span {
+        background-color: rgb(237, 237, 160); /* light yellow bg */
+        padding: 5px 10px; /* padding for each span */
+        margin: 5px; /* space around each span */
+        display: inline-block; /* necdssary for padding & margins to work??? */
+        border-radius: 4px; 
+      }
+
+      /* .wrapper > .left p {
+              display: flex;
+              flex-wrap: wrap;
+              margin-right: 10px; 
+              margin-bottom: 10px;
+            }
+ */
+
+      /* .wrapper > .left {
+              background: #fcc;
+              flex-basis: 70%;
+              display: flex;
+              flex-direction: column; /* stacks Employment, Education sections */
+      /* align-items: flex-start;
+              gap: 20px;
+              padding: 20px;
+            } */
+
+      .wrapper > .right {
+        /* background: #ccf; */
+        flex-basis: 40%;
+        padding-left: 20px; /* space to the left but breaking the structure - FIX!!!! */
+      }
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 0;
+      }
+
+      .wrapper > .profile-container {
+        display: flex;
+        flex-basis: 60%;
+        align-items: center; /* align  vertically */
+      }
+
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        /* margin-right: 20px; space between image and text */
+        margin: 20px; /* space around the image */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="resume-container">
+      <div class="wrapper">
+        <div class="profile-container">
+          <img class="profile-pic" src="./images/bear.jpg" alt="Barry The Bear" />
+          <div>
+            <h1>BARRY T. BEAR</h1>
+            <p>Aspiring Software Engineer | Smarter Than Your Average Bear</p>
+          </div>
+        </div>
+        <div class="right">
+          <p>
+            📅 &nbsp;&nbsp; DOB: January 15, 2015 <br />
+            <!-- (9 years old in bear years, but wise beyond them) -->
+          </p>
+          <p>📞 &nbsp;&nbsp; (555) 123-BEAR</p>
+          <p>🏡 &nbsp;&nbsp; 42 Honeycomb Lane, Deep Woods, North America</p>
+          <p>📧 &nbsp;&nbsp; barry@bearmail.com</p>
+          <p>🌐 &nbsp;&nbsp; www.bearcoded.com</p>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div>
+          <h2>🐾 Summary</h2>
+          <p>Highly motivated and tech-savvy bear with a natural curiosity for problem-solving and a strong ability to hibernate on tough coding challenges until solved. Possesses excellent debugging instincts, honed from years of stealing picnic baskets without getting caught. Seeking to transition from forest foraging to full-stack development, with a passion for automation, scalable solutions, and honey-based blockchain innovations.</p>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div>
+          <h2>🐾 Technical Skills</h2>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
+          <span>Vue.js</span>
+          <span>Angular</span>
+          <span>TypeScript</span>
+          <span>Bootstrap</span>
+          <span>Tailwind CSS</span>
+          <span>Material UI</span>
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>MongoDB</span>
+          <span>SQL</span>
+          <span>PostgreSQL</span>
+          <span>MySQL</span>
+          <span>Firebase</span>
+          <span>GraphQL</span>
+          <span>REST APIs</span>
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>Docker</span>
+          <span>Kubernetes</span>
+          <span>Python</span>
+          <span>Django</span>
+          <span>Flask</span>
+          <span>Ruby</span>
+          <span>Ruby on Rails</span>
+          <span>PHP</span>
+          <span>Laravel</span>
+          <span>Swift</span>
+          <span>Kotlin</span>
+          <span>Android Development</span>
+          <span>iOS Development</span>
+          <span>C</span>
+          <span>C++</span>
+          <span>C#</span>
+          <span>Unity</span>
+          <span>Unreal Engine</span>
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>Machine Learning</span>
+          <span>TensorFlow</span>
+          <span>PyTorch</span>
+          <span>Data Analysis</span>
+          <span>Pandas</span>
+          <span>NumPy</span>
+          <span>Scikit-Learn</span>
+          <span>Cybersecurity</span>
+          <span>Linux</span>
+          <span>Shell Scripting</span>
+          <span>Cloud Computing</span>
+          <span>AWS</span>
+          <span>Azure</span>
+          <span>Google Cloud</span>
+          <span>Figma</span>
+          <span>Adobe XD</span>
+          <span>UX/UI Design</span>
+          <span>Web Accessibility</span>
+          <span>SEO</span>
+          <!-- <p>JavaScript</p>
+          <p>Python</p>
+          <p>HTML/CSS</p>
+          <p>React</p>
+          <p>Node.js</p> -->
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="left">
+          <div>
+            <h2>🐾 Employment</h2>
+      
+            <p><b>🐻 Senior Picnic Basket Strategist<br />
+              Yellowstone National Park | 2018 – Present</b></p>
+            <ul>
+              <li>Lorem ipsum dolor sit amet consectetur. libero repellat ratione deleniti expedita? Impedit iusto dignissimos enim rem mollitia, sit sed fugit nobis veniam, commodi hic qui animi.</li>
+              <li>Lorem ipsum dolor sit amet consectetur, adipisicing modi hic qui animi.</li>
+            </ul>
+      
+            <p><b>🐻 Junior Cave Architect<br />
+              Great Northern Den Builders | 2016 – 2018</b></p>
+            <ul>
+              <li>Ex soluta hic commodi in numquam cumque, facilis laboriosam doloremque! Sit sed fugit nobis veniam, commodi hic qui animi.</li>
+              <li>Lorem ipsum dolor sit amet consectetur, adipisicing modi hic qui animi.</li>
+            </ul>
+      
+            <h2>🐾 Education</h2>
+      
+            <p><b>Bear Coders Bootcamp (Ongoing)</b><br />
+              Studying full-stack development, API integrations, and advanced fish-catching algorithms.</p>
+      
+            <p><b>University of the Wild | Graduated 2015</b><br />
+              Bachelor’s in Survival & Adaptive Problem Solving</p>
+          </div>
+        </div>
+      
+        <div class="right">
+          <h3>🐾 Graphic Skills</h3>
+          <ul>
+            <li>✅ <b>Adobe Honeyshop</b> 🖌️</li>
+            <li>✅ <b>BearSketch Pro</b> 🎨</li>
+            <li>✅ <b>UX/UI Instinctual Optimization</b> 🧠</li>
+          </ul>
+      
+          <h3>🐾 Language Skills</h3>
+          <ul>
+            <li>🐻 <b>Fluent in Bearish</b> (Growl, Roar, Subtle Grunts)</li>
+            <li>🐝 <b>Conversational Buzz</b> (can communicate with bees, sometimes)</li>
+            <li>👨‍💻 <b>Beginner in Human-English</b> (Limited to reading picnic signs and coding documentation)</li>
+          </ul>
+      
+          <h3>🐾 Programming Skills</h3>
+          <ul>
+            <li>💻 <b>Python</b> (bears love simple syntax)</li>
+            <li>🍯 <b>JavaScript</b> (great for honey-based web apps)</li>
+            <li>🌲 <b>C++</b> (because nature is all about efficiency)</li>
+            <li>🦾 <b>Git</b> </li>
+          </ul>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+  </body>
+</html>
+
